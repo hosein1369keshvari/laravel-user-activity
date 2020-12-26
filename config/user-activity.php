@@ -15,6 +15,7 @@ return [
         'on_edit'       => true,
         'on_delete'     => true,
         'on_login'      => true,
+         'on_logout'   => true,
         'on_lockout'    => true
     ]
 ];
