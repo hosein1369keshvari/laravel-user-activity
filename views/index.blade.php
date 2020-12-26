@@ -449,7 +449,7 @@
                 <label>LOG TYPE</label>
 
                 <select ng-model="filter.log_type">
-                    @foreach(['edit','delete','login','lockout'] as $type)
+                    @foreach(['edit','delete','login','lockout','Logout'] as $type)
                         <option value="{{ $type}}">{{ $type}}</option>
                     @endforeach
                 </select>
@@ -503,6 +503,7 @@
                         <span ng-if="['delete','lockout'].includes(log.log_type)" class="badge emergency">@{{log.log_type}}</span>
                         <span ng-if="log.log_type=='edit'" class="badge warning edit_badge">@{{log.log_type}}</span>
                         <span ng-show="['edit','delete'].includes(log.log_type)" class="from_table">
+                         <span ng-if="log.log_type=='logout'" class="badge warning edit_badge">@{{log.log_type}}</span>
                             from @{{ log.table_name }}</span>
                         <span ng-if="log.log_type=='login'" class="badge debug">@{{log.log_type}}</span>
                     </td>
@@ -559,7 +560,7 @@
                             <span ng-if="['delete','lockout'].includes(selected.log_type)"
                                   class="badge emergency">@{{selected.log_type}}</span>
                             <span ng-if="selected.log_type=='edit'" class="badge warning edit_badge">@{{selected.log_type}}</span>
-
+                           <span ng-if="selected.log_type=='logout'" class="badge warning edit_badge">@{{selected.log_type}}</span>
                             <span ng-if="selected.log_type=='login'" class="badge debug">@{{selected.log_type}}</span>
                         </td>
                     </tr>
